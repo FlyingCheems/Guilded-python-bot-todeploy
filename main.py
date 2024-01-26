@@ -8,7 +8,10 @@ from threading import Thread
 from io import StringIO
 import contextlib
 import asyncio
+from dotenv import load_dotenv
+import os
 
+TOKEN = os.getenv('tomken') 
 
 app = Flask(__name__)
 bot = commands.Bot(command_prefix='!')
@@ -272,4 +275,4 @@ flask_thread = Thread(target=run_flask)
 flask_thread.start()
 
   
-bot.run('gapi_J1HimzuzCGK+YIGbuAp0txvr6lfpbZUSubbccs8hrL94ILMyDEwD5HU30t1yQ+3yC+WYVK1L3OXZVzseEVpasg==')
+bot.run(TOKEN)
